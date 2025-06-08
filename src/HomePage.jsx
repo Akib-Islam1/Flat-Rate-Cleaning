@@ -1,76 +1,47 @@
 import React from 'react';
+import { Typewriter } from 'react-simple-typewriter';
 
 export default function HomePage() {
   return (
-    <main style={{ fontFamily: 'Arial, sans-serif', padding: '2rem', background: '#f9f9f9' }}>
-      {/* Hero Section */}
-      <section style={{ textAlign: 'center', padding: '3rem 1rem', background: 'linear-gradient(135deg, #e0f7fa, #fce4ec)', borderRadius: '16px', marginBottom: '3rem' }}>
-        <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
-          Flat-Rate Apartment Cleaning in Brooklyn
-        </h1>
-        <p style={{ fontSize: '1.2rem', marginBottom: '1.5rem' }}>
-          Trusted cleaners. Flat-rate pricing. First clean only <strong>$69</strong>.
-        </p>
-        <a href="#book" style={{ textDecoration: 'none' }}>
-          <button style={{ padding: '12px 24px', fontSize: '1rem', backgroundColor: '#2563eb', color: 'white', borderRadius: '8px', border: 'none', cursor: 'pointer' }}>
-            Book Now
-          </button>
-        </a>
-      </section>
+    <main style={{
+      fontFamily: 'Arial, sans-serif',
+      padding: '4rem 2rem',
+      background: 'linear-gradient(to bottom, #f8fafc, #ffffff)',
+      minHeight: '100vh',
+      textAlign: 'center'
+    }}>
+      <h1 style={{ fontSize: '3rem', fontWeight: '600', marginBottom: '1rem' }}>
+        Flat-Rate Apartment Cleaning
+      </h1>
 
-      {/* Services Section */}
-      <section style={{ marginBottom: '3rem' }}>
-        <h2 style={{ textAlign: 'center', fontSize: '1.8rem', marginBottom: '2rem' }}>Our Services</h2>
-        <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-          {[{
-            title: 'Standard Clean',
-            price: '$99',
-            features: ['Kitchen wipe-down', 'Bathroom scrub', 'Dusting', 'Floors vacuumed/mopped', 'Trash removal']
-          }, {
-            title: 'Premium Clean',
-            price: '$139',
-            features: ['Everything in Standard', 'Inside microwave & fridge', 'Baseboards', 'High-touch points', 'Extra time']
-          }, {
-            title: 'Move-In/Out',
-            price: '$179',
-            features: ['Full deep clean', 'Inside appliances', 'Cabinets & drawers', 'Walls spot-cleaned', 'Ideal for new tenants']
-          }].map(service => (
-            <div style={{ background: '#fff', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.05)', padding: '1.5rem', width: '300px' }}>
-              <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>{service.title} – {service.price}</h3>
-              <ul style={{ paddingLeft: '1.2rem' }}>
-                {service.features.map(item => <li>{item}</li>)}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
+      <p style={{ fontSize: '1.25rem', marginBottom: '2rem', color: '#4b5563', height: '40px' }}>
+        <Typewriter
+          words={['Trusted cleaners.', 'Flat-rate pricing.', 'First clean only $69.']}
+          loop={0}
+          cursor
+          cursorStyle="|"
+          typeSpeed={60}
+          deleteSpeed={40}
+          delaySpeed={1200}
+        />
+      </p>
 
-      {/* Gallery Section */}
-      <section style={{ marginBottom: '3rem' }}>
-        <h2 style={{ textAlign: 'center', fontSize: '1.8rem', marginBottom: '2rem' }}>Before & After</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
-          {[1, 2, 3, 4].map(i => (
-            <div style={{ backgroundColor: '#e0e0e0', height: '180px', borderRadius: '8px' }}>
-              <p style={{ textAlign: 'center', lineHeight: '180px', color: '#666' }}>Photo {i}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Booking CTA */}
-      <section id="book" style={{ textAlign: 'center', marginBottom: '2rem' }}>
-        <h2 style={{ fontSize: '1.8rem', marginBottom: '1rem' }}>Book Your Cleaning</h2>
-        <p style={{ fontSize: '1rem', marginBottom: '1rem' }}>Choose a package, pick a time, and we’ll handle the rest.</p>
-        <a href="https://calendly.com/akibislam1201/30min" target="_blank" rel="noopener noreferrer">
-          <button style={{ padding: '12px 24px', fontSize: '1rem', backgroundColor: '#2563eb', color: 'white', borderRadius: '8px', border: 'none', cursor: 'pointer' }}>
-            Book on Calendly
-          </button>
-        </a>
-      </section>
-
-      <footer style={{ textAlign: 'center', fontSize: '0.8rem', color: '#999' }}>
-        © {new Date().getFullYear()} Akib's Cleaning. All rights reserved.
-      </footer>
+      <a href="https://calendly.com/akibislam1201/30min" target="_blank" rel="noopener noreferrer">
+        <button style={{
+          padding: '14px 28px',
+          fontSize: '1rem',
+          backgroundColor: '#2563eb',
+          color: 'white',
+          border: 'none',
+          borderRadius: '8px',
+          cursor: 'pointer',
+          transition: 'background-color 0.3s ease'
+        }}
+        onMouseOver={e => e.target.style.backgroundColor = '#1e40af'}
+        onMouseOut={e => e.target.style.backgroundColor = '#2563eb'}>
+          Book Now
+        </button>
+      </a>
     </main>
   );
 }
