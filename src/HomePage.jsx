@@ -7,15 +7,20 @@ const loopedPhrases = [
 ];
 
 export default function HomePage() {
-  const [currentPhrase, setCurrentPhrase] = useState(loopedPhrases[0]);
   const [index, setIndex] = useState(0);
+  const [fade, setFade] = useState(true);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    const fadeOut = setTimeout(() => setFade(false), 1500);
+    const switchText = setTimeout(() => {
       setIndex(prev => (prev + 1) % loopedPhrases.length);
-      setCurrentPhrase(loopedPhrases[(index + 1) % loopedPhrases.length]);
+      setFade(true);
     }, 2000);
-    return () => clearInterval(interval);
+
+    return () => {
+      clearTimeout(fadeOut);
+      clearTimeout(switchText);
+    };
   }, [index]);
 
   return (
@@ -25,8 +30,14 @@ export default function HomePage() {
         <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
           Flat-Rate Apartment Cleaning in Brooklyn
         </h1>
-        <p style={{ fontSize: '1.2rem', marginBottom: '1.5rem', height: '1.5em', transition: 'opacity 0.4s ease' }}>
-          {currentPhrase}
+        <p style={{
+          fontSize: '1.2rem',
+          marginBottom: '1.5rem',
+          height: '1.5em',
+          opacity: fade ? 1 : 0,
+          transition: 'opacity 0.5s ease-in-out'
+        }}>
+          {loopedPhrases[index]}
         </p>
         <a href="#book" style={{ textDecoration: 'none' }}>
           <button style={{ padding: '12px 24px', fontSize: '1rem', backgroundColor: '#2563eb', color: 'white', borderRadius: '8px', border: 'none', cursor: 'pointer' }}>
@@ -52,10 +63,10 @@ export default function HomePage() {
             price: '$179',
             features: ['Full deep clean', 'Inside appliances', 'Cabinets & drawers', 'Walls spot-cleaned', 'Ideal for new tenants']
           }].map(service => (
-            <div style={{ background: '#fff', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.05)', padding: '1.5rem', width: '300px' }}>
+            <div key={service.title} style={{ background: '#fff', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.05)', padding: '1.5rem', width: '300px' }}>
               <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>{service.title} – {service.price}</h3>
               <ul style={{ paddingLeft: '1.2rem' }}>
-                {service.features.map(item => <li>{item}</li>)}
+                {service.features.map((item, i) => <li key={i}>{item}</li>)}
               </ul>
             </div>
           ))}
@@ -67,7 +78,7 @@ export default function HomePage() {
         <h2 style={{ textAlign: 'center', fontSize: '1.8rem', marginBottom: '2rem' }}>Before & After</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
           {[1, 2, 3, 4].map(i => (
-            <div style={{ backgroundColor: '#e0e0e0', height: '180px', borderRadius: '8px' }}>
+            <div key={i} style={{ backgroundColor: '#e0e0e0', height: '180px', borderRadius: '8px' }}>
               <p style={{ textAlign: 'center', lineHeight: '180px', color: '#666' }}>Photo {i}</p>
             </div>
           ))}
