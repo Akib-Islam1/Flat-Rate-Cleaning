@@ -1,4 +1,5 @@
 import React from 'react';
+import { Typewriter } from 'react-simple-typewriter';
 
 export default function HomePage() {
   return (
@@ -13,8 +14,16 @@ export default function HomePage() {
         Flat-Rate Apartment Cleaning
       </h1>
 
-      <p style={{ fontSize: '1.25rem', marginBottom: '2rem', color: '#4b5563' }}>
-        Trusted cleaners. Flat-rate pricing. First clean only $69.
+      <p style={{ fontSize: '1.25rem', marginBottom: '2rem', color: '#4b5563', height: '40px' }}>
+        <Typewriter
+          words={['Trusted cleaners.', 'Flat-rate pricing.', 'First clean only $69.']}
+          loop={0}
+          cursor
+          cursorStyle="|"
+          typeSpeed={60}
+          deleteSpeed={40}
+          delaySpeed={1200}
+        />
       </p>
 
       <a href="https://calendly.com/akibislam1201/30min" target="_blank" rel="noopener noreferrer">
