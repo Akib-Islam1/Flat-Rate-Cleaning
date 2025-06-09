@@ -11,12 +11,17 @@ export default function HomePage() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex(prev => (prev + 1) % loopedPhrases.length);
-      setCurrentPhrase(loopedPhrases[(index + 1) % loopedPhrases.length]);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, [index]);
+  const fadeOut = setTimeout(() => setFade(false), 1500);
+  const switchText = setTimeout(() => {
+    setIndex(prev => (prev + 1) % loopedPhrases.length);
+    setFade(true);
+  }, 2000);
+
+  return () => {
+    clearTimeout(fadeOut);
+    clearTimeout(switchText);
+  };
+}, [index]);
 
   return (
     <main style={{
@@ -31,8 +36,16 @@ export default function HomePage() {
         <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
           Flat-Rate Apartment Cleaning in Brooklyn
         </h1>
-        <p style={{ fontSize: '1.2rem', marginBottom: '1.5rem', height: '1.5em', transition: 'opacity 0.4s ease' }}>
-          {currentPhrase}
+       <p style={{
+  fontSize: '1.2rem',
+  marginBottom: '1.5rem',
+  height: '1.5em',
+  opacity: fade ? 1 : 0,
+  transition: 'opacity 0.5s ease-in-out',
+  color: '#333'
+}}>
+  {loopedPhrases[index]}
+</p>
         </p>
         <a href="#book" style={{ textDecoration: 'none' }}>
           <button style={{ padding: '12px 24px', fontSize: '1rem', backgroundColor: '#2563eb', color: 'white', borderRadius: '8px', border: 'none', cursor: 'pointer' }}>
