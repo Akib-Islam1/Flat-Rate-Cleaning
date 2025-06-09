@@ -24,10 +24,10 @@ export default function HomePage() {
   }, [index]);
 
   return (
-  <main style={{ fontFamily: 'Arial, sans-serif', padding: '2rem', background: '#ffffff' }}>
+  <main style={{ fontFamily: 'Arial, sans-serif', padding: '2rem', background: '#f9f9f9' }}>
       {/* Hero Section */}
-<section style={{ textAlign: 'center', padding: '3rem 1rem', background: 'linear-gradient(135deg, #f0f9ff, #e0f2fe)', borderRadius: '16px', marginBottom: '3rem' }}>
-  <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem', color: '#1e293b' }}>
+<section style={{ textAlign: 'center', padding: '3rem 1rem', background: 'linear-gradient(135deg, #e1f5fe, #fffde7)', borderRadius: '16px', marginBottom: '3rem' }}>
+  <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem', color: '#1976d2' }}>
     Flat-Rate Apartment Cleaning in Brooklyn
   </h1>
   <p style={{
@@ -36,12 +36,12 @@ export default function HomePage() {
     height: '1.5em',
     opacity: fade ? 1 : 0,
     transition: 'opacity 0.5s ease-in-out',
-    color: '#111827'
+    color: '#333'
   }}>
     {loopedPhrases[index]}
   </p>
   <a href="#book" style={{ textDecoration: 'none' }}>
-    <button style={{ padding: '12px 24px', fontSize: '1rem', backgroundColor: '#38bdf8', color: '#1e293b', borderRadius: '8px', border: 'none', cursor: 'pointer' }}>
+    <button style={{ padding: '12px 24px', fontSize: '1rem', backgroundColor: '#1976d2', color: 'white', borderRadius: '8px', border: 'none', cursor: 'pointer' }}>
       Book Now
     </button>
   </a>
