@@ -11,41 +11,23 @@ export default function HomePage() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-  const fadeOut = setTimeout(() => setFade(false), 1500);
-  const switchText = setTimeout(() => {
-    setIndex(prev => (prev + 1) % loopedPhrases.length);
-    setFade(true);
-  }, 2000);
-
-  return () => {
-    clearTimeout(fadeOut);
-    clearTimeout(switchText);
-  };
-}, [index]);
+    const interval = setInterval(() => {
+      setIndex(prev => (prev + 1) % loopedPhrases.length);
+      setCurrentPhrase(loopedPhrases[(index + 1) % loopedPhrases.length]);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [index]);
 
   return (
-    <main style={{
-  fontFamily: 'Arial, sans-serif',
-  padding: '2rem 1rem',
-  background: '#f9f9f9',
-  maxWidth: '1024px',
-  margin: '0 auto'
-}}>
+    <main style={{ fontFamily: 'Arial, sans-serif', padding: '2rem', background: '#f9f9f9' }}>
       {/* Hero Section */}
       <section style={{ textAlign: 'center', padding: '3rem 1rem', background: 'linear-gradient(135deg, #e0f7fa, #fce4ec)', borderRadius: '16px', marginBottom: '3rem' }}>
         <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
           Flat-Rate Apartment Cleaning in Brooklyn
         </h1>
-       <p style={{
-  fontSize: '1.2rem',
-  marginBottom: '1.5rem',
-  height: '1.5em',
-  opacity: fade ? 1 : 0,
-  transition: 'opacity 0.5s ease-in-out',
-  color: '#333'
-}}>
-  {loopedPhrases[index]}
-</p>
+        <p style={{ fontSize: '1.2rem', marginBottom: '1.5rem', height: '1.5em', transition: 'opacity 0.4s ease' }}>
+          {currentPhrase}
+        </p>
         <a href="#book" style={{ textDecoration: 'none' }}>
           <button style={{ padding: '12px 24px', fontSize: '1rem', backgroundColor: '#2563eb', color: 'white', borderRadius: '8px', border: 'none', cursor: 'pointer' }}>
             Book Now
@@ -56,12 +38,7 @@ export default function HomePage() {
       {/* Services Section */}
       <section style={{ marginBottom: '3rem' }}>
         <h2 style={{ textAlign: 'center', fontSize: '1.8rem', marginBottom: '2rem' }}>Our Services</h2>
-       <div style={{
-  display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-  gap: '1.5rem',
-  justifyContent: 'center'
-}}>
+        <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
           {[{
             title: 'Standard Clean',
             price: '$99',
@@ -88,8 +65,7 @@ export default function HomePage() {
       {/* Gallery Section */}
       <section style={{ marginBottom: '3rem' }}>
         <h2 style={{ textAlign: 'center', fontSize: '1.8rem', marginBottom: '2rem' }}>Before & After</h2>
-        display: 'grid',
-gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
           {[1, 2, 3, 4].map(i => (
             <div style={{ backgroundColor: '#e0e0e0', height: '180px', borderRadius: '8px' }}>
               <p style={{ textAlign: 'center', lineHeight: '180px', color: '#666' }}>Photo {i}</p>
