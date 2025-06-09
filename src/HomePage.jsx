@@ -19,7 +19,13 @@ export default function HomePage() {
   }, [index]);
 
   return (
-    <main style={{ fontFamily: 'Arial, sans-serif', padding: '2rem', background: '#f9f9f9' }}>
+    <main style={{
+  fontFamily: 'Arial, sans-serif',
+  padding: '2rem 1rem',
+  background: '#f9f9f9',
+  maxWidth: '1024px',
+  margin: '0 auto'
+}}>
       {/* Hero Section */}
       <section style={{ textAlign: 'center', padding: '3rem 1rem', background: 'linear-gradient(135deg, #e0f7fa, #fce4ec)', borderRadius: '16px', marginBottom: '3rem' }}>
         <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
@@ -38,7 +44,12 @@ export default function HomePage() {
       {/* Services Section */}
       <section style={{ marginBottom: '3rem' }}>
         <h2 style={{ textAlign: 'center', fontSize: '1.8rem', marginBottom: '2rem' }}>Our Services</h2>
-        <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+       <div style={{
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+  gap: '1.5rem',
+  justifyContent: 'center'
+}}>
           {[{
             title: 'Standard Clean',
             price: '$99',
@@ -65,7 +76,8 @@ export default function HomePage() {
       {/* Gallery Section */}
       <section style={{ marginBottom: '3rem' }}>
         <h2 style={{ textAlign: 'center', fontSize: '1.8rem', marginBottom: '2rem' }}>Before & After</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
+        display: 'grid',
+gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
           {[1, 2, 3, 4].map(i => (
             <div style={{ backgroundColor: '#e0e0e0', height: '180px', borderRadius: '8px' }}>
               <p style={{ textAlign: 'center', lineHeight: '180px', color: '#666' }}>Photo {i}</p>
