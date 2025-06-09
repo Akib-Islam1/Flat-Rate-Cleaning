@@ -74,6 +74,30 @@ export default function HomePage() {
         </div>
       </section>
 
+{/* Why Choose Us */}
+<section style={{ marginBottom: '3rem' }}>
+  <h2 style={{ textAlign: 'center', fontSize: '1.8rem', marginBottom: '2rem' }}>Why Choose Us?</h2>
+  <div style={{
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+    gap: '1.5rem',
+    textAlign: 'center'
+  }}>
+    {[
+      { emoji: '✅', title: 'Flat-Rate Pricing', desc: 'No surprise fees. One price, upfront.' },
+      { emoji: '🧹', title: 'Vetted Cleaners', desc: 'Professionally screened and trained.' },
+      { emoji: '📍', title: 'Local Service', desc: 'Serving Brooklyn and surrounding boroughs.' },
+      { emoji: '⭐', title: 'Satisfaction Guaranteed', desc: 'We’re not happy unless you are.' }
+    ].map((item, i) => (
+      <div key={i} style={{ background: '#fff', padding: '1.5rem', borderRadius: '12px', boxShadow: '0 4px 10px rgba(0,0,0,0.05)' }}>
+        <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>{item.emoji}</div>
+        <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>{item.title}</h3>
+        <p style={{ fontSize: '0.95rem', color: '#555' }}>{item.desc}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
       {/* Gallery Section */}
       <section style={{ marginBottom: '3rem' }}>
         <h2 style={{ textAlign: 'center', fontSize: '1.8rem', marginBottom: '2rem' }}>Before & After</h2>
