@@ -24,30 +24,31 @@ export default function HomePage() {
   }, [index]);
 
   return (
-    <main style={{ fontFamily: 'Arial, sans-serif', padding: '2rem', background: '#f9f9f9' }}>
+   <main style={{ fontFamily: 'Arial, sans-serif', padding: '2rem', background: '#fdfdfb' }}>
       {/* Hero Section */}
-      <section style={{ textAlign: 'center', padding: '3rem 1rem', background: 'linear-gradient(135deg, #e0f7fa, #fce4ec)', borderRadius: '16px', marginBottom: '3rem' }}>
-        <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
-          Flat-Rate Apartment Cleaning in Brooklyn
-        </h1>
-        <p style={{
-          fontSize: '1.2rem',
-          marginBottom: '1.5rem',
-          height: '1.5em',
-          opacity: fade ? 1 : 0,
-          transition: 'opacity 0.5s ease-in-out'
-        }}>
-          {loopedPhrases[index]}
-        </p>
-        <a href="#book" style={{ textDecoration: 'none' }}>
-          <button style={{ padding: '12px 24px', fontSize: '1rem', backgroundColor: '#2563eb', color: 'white', borderRadius: '8px', border: 'none', cursor: 'pointer' }}>
-            Book Now
-          </button>
-        </a>
-      </section>
+      {/* Hero Section */}
+<section style={{ textAlign: 'center', padding: '3rem 1rem', background: 'linear-gradient(135deg, #f5f5dc, #e0f2f1)', borderRadius: '16px', marginBottom: '3rem' }}>
+  <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem', color: '#2e7d32' }}>
+    Flat-Rate Apartment Cleaning in Brooklyn
+  </h1>
+  <p style={{
+    fontSize: '1.2rem',
+    marginBottom: '1.5rem',
+    height: '1.5em',
+    opacity: fade ? 1 : 0,
+    transition: 'opacity 0.5s ease-in-out',
+    color: '#333'
+  }}>
+    {loopedPhrases[index]}
+  </p>
+  <a href="#book" style={{ textDecoration: 'none' }}>
+    <button style={{ padding: '12px 24px', fontSize: '1rem', backgroundColor: '#2e7d32', color: 'white', borderRadius: '8px', border: 'none', cursor: 'pointer' }}>
+      Book Now
+    </button>
+  </a>
+</section>
 
       {/* Services Section */}
-    {/* Services Section */}
 <section style={{ marginBottom: '3rem' }}>
   <h2 style={{ textAlign: 'center', fontSize: '1.8rem', marginBottom: '2rem' }}>Our Services</h2>
   <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
@@ -98,7 +99,7 @@ export default function HomePage() {
         <h2 style={{ fontSize: '1.8rem', marginBottom: '1rem' }}>Book Your Cleaning</h2>
         <p style={{ fontSize: '1rem', marginBottom: '1rem' }}>Choose a package, pick a time, and we’ll handle the rest.</p>
         <a href="https://calendly.com/akibislam1201/30min" target="_blank" rel="noopener noreferrer">
-          <button style={{ padding: '12px 24px', fontSize: '1rem', backgroundColor: '#2563eb', color: 'white', borderRadius: '8px', border: 'none', cursor: 'pointer' }}>
+          <button style={{ padding: '12px 24px', fontSize: '1rem', backgroundColor: '#2e7d32', color: 'white', borderRadius: '8px', border: 'none', cursor: 'pointer' }}>
             Book on Calendly
           </button>
         </a>
