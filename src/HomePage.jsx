@@ -46,7 +46,6 @@ export default function HomePage() {
 }}>
   {loopedPhrases[index]}
 </p>
-        </p>
         <a href="#book" style={{ textDecoration: 'none' }}>
           <button style={{ padding: '12px 24px', fontSize: '1rem', backgroundColor: '#2563eb', color: 'white', borderRadius: '8px', border: 'none', cursor: 'pointer' }}>
             Book Now
