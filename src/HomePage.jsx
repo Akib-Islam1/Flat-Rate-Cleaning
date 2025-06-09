@@ -98,7 +98,7 @@ export default function HomePage() {
         <h2 style={{ fontSize: '1.8rem', marginBottom: '1rem' }}>Book Your Cleaning</h2>
         <p style={{ fontSize: '1rem', marginBottom: '1rem' }}>Choose a package, pick a time, and we’ll handle the rest.</p>
         <a href="https://calendly.com/akibislam1201/30min" target="_blank" rel="noopener noreferrer">
-          <button style={{ padding: '12px 24px', fontSize: '1rem', backgroundColor: '#38bdf8', color: '#1e293b', color: 'white', borderRadius: '8px', border: 'none', cursor: 'pointer' }}>
+          <button style={{ padding: '12px 24px', fontSize: '1rem', backgroundColor: '#1976d2', color: '#1e293b', color: 'white', borderRadius: '8px', border: 'none', cursor: 'pointer' }}>
             Book on Calendly
           </button>
         </a>
