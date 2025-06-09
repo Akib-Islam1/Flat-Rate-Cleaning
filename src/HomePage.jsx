@@ -47,31 +47,39 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section style={{ marginBottom: '3rem' }}>
-        <h2 style={{ textAlign: 'center', fontSize: '1.8rem', marginBottom: '2rem' }}>Our Services</h2>
-        <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-          {[{
-            title: 'Standard Clean',
-            price: '$99',
-            features: ['Kitchen wipe-down', 'Bathroom scrub', 'Dusting', 'Floors vacuumed/mopped', 'Trash removal']
-          }, {
-            title: 'Premium Clean',
-            price: '$139',
-            features: ['Everything in Standard', 'Inside microwave & fridge', 'Baseboards', 'High-touch points', 'Extra time']
-          }, {
-            title: 'Move-In/Out',
-            price: '$179',
-            features: ['Full deep clean', 'Inside appliances', 'Cabinets & drawers', 'Walls spot-cleaned', 'Ideal for new tenants']
-          }].map(service => (
-            <div key={service.title} style={{ background: '#fff', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.05)', padding: '1.5rem', width: '300px' }}>
-              <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>{service.title} – {service.price}</h3>
-              <ul style={{ paddingLeft: '1.2rem' }}>
-                {service.features.map((item, i) => <li key={i}>{item}</li>)}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
+    {/* Services Section */}
+<section style={{ marginBottom: '3rem' }}>
+  <h2 style={{ textAlign: 'center', fontSize: '1.8rem', marginBottom: '2rem' }}>Our Services</h2>
+  <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+    {[{
+      title: 'Standard Clean',
+      price: '$99',
+      icon: '🧼',
+      features: ['Kitchen wipe-down', 'Bathroom scrub', 'Dusting', 'Floors vacuumed/mopped', 'Trash removal']
+    }, {
+      title: 'Premium Clean',
+      price: '$139',
+      icon: '✨',
+      features: ['Everything in Standard', 'Inside microwave & fridge', 'Baseboards', 'High-touch points', 'Extra time']
+    }, {
+      title: 'Move-In/Out',
+      price: '$179',
+      icon: '📦',
+      features: ['Full deep clean', 'Inside appliances', 'Cabinets & drawers', 'Walls spot-cleaned', 'Ideal for new tenants']
+    }].map(service => (
+      <div key={service.title} style={{ background: '#fff', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.05)', padding: '1.5rem', width: '300px' }}>
+        <h3 style={{ fontSize: '1.3rem', marginBottom: '0.75rem' }}>
+          <span style={{ fontSize: '1.5rem', marginRight: '0.5rem' }}>{service.icon}</span>
+          {service.title} – {service.price}
+        </h3>
+        <ul style={{ paddingLeft: '1.2rem' }}>
+          {service.features.map((item, i) => <li key={i}>{item}</li>)}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>
+
 
       {/* Gallery Section */}
       <section style={{ marginBottom: '3rem' }}>
