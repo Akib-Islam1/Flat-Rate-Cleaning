@@ -48,31 +48,40 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section style={{ marginBottom: '3rem' }}>
-        <h2 style={{ textAlign: 'center', fontSize: '1.8rem', marginBottom: '2rem' }}>Our Services</h2>
-        <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-          {[{
-            title: 'Standard Clean',
-            price: '$99',
-            features: ['Kitchen wipe-down', 'Bathroom scrub', 'Dusting', 'Floors vacuumed/mopped', 'Trash removal']
-          }, {
-            title: 'Premium Clean',
-            price: '$139',
-            features: ['Everything in Standard', 'Inside microwave & fridge', 'Baseboards', 'High-touch points', 'Extra time']
-          }, {
-            title: 'Move-In/Out',
-            price: '$179',
-            features: ['Full deep clean', 'Inside appliances', 'Cabinets & drawers', 'Walls spot-cleaned', 'Ideal for new tenants']
-          }].map(service => (
-            <div style={{ background: '#fff', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.05)', padding: '1.5rem', width: '300px' }}>
-              <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>{service.title} – {service.price}</h3>
-              <ul style={{ paddingLeft: '1.2rem' }}>
-                {service.features.map(item => <li>{item}</li>)}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
+<section style={{ marginBottom: '3rem' }}>
+  <h2 style={{ textAlign: 'center', fontSize: '1.8rem', marginBottom: '2rem' }}>Our Services</h2>
+  <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+    {[{
+      title: 'Flat-Rate Clean',
+      price: '$150',
+      features: [
+        'Kitchen & bathroom cleaning',
+        'Floors vacuumed/mopped',
+        'Surfaces wiped & dusted',
+        'Trash removed',
+        'Ideal for studio or 1-bedroom apartments'
+      ]
+    }, {
+      title: 'Move-In/Out Deep Clean',
+      price: '$225',
+      features: [
+        'Everything in Flat-Rate Clean',
+        'Inside oven, fridge & cabinets',
+        'Walls spot-cleaned',
+        'Baseboards & door frames wiped',
+        'Perfect for empty or transitioning apartments'
+      ]
+    }].map(service => (
+      <div style={{ background: '#fff', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.05)', padding: '1.5rem', width: '300px' }}>
+        <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>{service.title} – {service.price}</h3>
+        <ul style={{ paddingLeft: '1.2rem' }}>
+          {service.features.map(item => <li>{item}</li>)}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>
+
 
 {/* Why Choose Us */}
 <section style={{ marginBottom: '3rem' }}>
