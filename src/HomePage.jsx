@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const loopedPhrases = [
   "Trusted cleaners.",
   "Flat-rate pricing.",
-  "First clean only $69."
+  "First clean only $100."
 ];
 
 export default function HomePage() {
@@ -28,7 +28,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section style={{ textAlign: 'center', padding: '3rem 1rem', background: 'linear-gradient(135deg, #e0f7fa, #fce4ec)', borderRadius: '16px', marginBottom: '3rem' }}>
         <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
-          Flat-Rate Apartment Cleaning in Brooklyn
+          Flat-Rate Cleaning
         </h1>
         <p style={{
   fontSize: '1.2rem',
