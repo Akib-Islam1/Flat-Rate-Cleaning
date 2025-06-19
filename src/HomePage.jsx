@@ -52,24 +52,22 @@ export default function HomePage() {
   <h2 style={{ textAlign: 'center', fontSize: '1.8rem', marginBottom: '2rem' }}>Our Services</h2>
   <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
     {[{
-      title: 'Flat-Rate Clean',
+      title: 'Standard Clean',
       price: '$150',
       features: [
         'Kitchen & bathroom cleaning',
         'Floors vacuumed/mopped',
         'Surfaces wiped & dusted',
         'Trash removed',
-        'Ideal for studio or 1-bedroom apartments'
       ]
     }, {
-      title: 'Move-In/Out Deep Clean',
-      price: '$225',
+      title: 'Premium Clean',
+      price: '$200',
       features: [
         'Everything in Flat-Rate Clean',
         'Inside oven, fridge & cabinets',
         'Walls spot-cleaned',
         'Baseboards & door frames wiped',
-        'Perfect for empty or transitioning apartments'
       ]
     }].map(service => (
       <div style={{ background: '#fff', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.05)', padding: '1.5rem', width: '300px' }}>
