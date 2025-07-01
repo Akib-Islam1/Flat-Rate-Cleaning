@@ -81,16 +81,28 @@ export default function HomePage() {
 </section>
 
       {/* Gallery Section */}
-      <section style={{ marginBottom: '3rem' }}>
-        <h2 style={{ textAlign: 'center', fontSize: '1.8rem', marginBottom: '2rem' }}>Before & After</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
-          {[1, 2, 3, 4].map(i => (
-            <div style={{ backgroundColor: '#e0e0e0', height: '180px', borderRadius: '8px' }}>
-              <p style={{ textAlign: 'center', lineHeight: '180px', color: '#666' }}>Photo {i}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+<section style={{ marginBottom: '3rem' }}>
+  <h2 style={{ textAlign: 'center', fontSize: '1.8rem', marginBottom: '2rem' }}>Before & After</h2>
+  <div style={{
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+    gap: '1.5rem'
+  }}>
+    {[
+      { room: 'Kitchen', file: 'Kitchen Before & After.png' },
+      { room: 'Bathroom', file: 'Bathroom Before & After.png' }
+    ].map(({ room, file }) => (
+      <div key={room} style={{ borderRadius: '8px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(0,0,0,0.05)' }}>
+        <div style={{ fontWeight: 'bold', padding: '0.5rem', background: '#f0f0f0' }}>{room}</div>
+        <img
+          src={`/src/assets/gallery/${file}`}
+          alt={`${room} before and after`}
+          style={{ width: '100%', display: 'block' }}
+        />
+      </div>
+    ))}
+  </div>
+</section>
 
       {/* Booking CTA */}
       <section id="book" style={{ textAlign: 'center', marginBottom: '2rem' }}>
