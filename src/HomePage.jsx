@@ -86,19 +86,24 @@ export default function HomePage() {
       {/* Gallery Section */}
 <section style={{ marginBottom: '3rem' }}>
   <h2 style={{ textAlign: 'center', fontSize: '1.8rem', marginBottom: '2rem' }}>Before & After</h2>
-  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
-    <div style={{ backgroundColor: '#fff', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.05)', padding: '1rem' }}>
+  <div style={{
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+    gap: '1rem',
+    justifyItems: 'center'
+  }}>
+    <div style={{ background: '#f5f5f5', padding: '1rem', borderRadius: '8px', width: '100%', maxWidth: '300px' }}>
       <img
         src={kitchenImage}
         alt="Kitchen Before and After"
-        style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+        style={{ width: '100%', height: 'auto', borderRadius: '6px', objectFit: 'cover' }}
       />
     </div>
-    <div style={{ backgroundColor: '#fff', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.05)', padding: '1rem' }}>
+    <div style={{ background: '#f5f5f5', padding: '1rem', borderRadius: '8px', width: '100%', maxWidth: '300px' }}>
       <img
         src={bathroomImage}
         alt="Bathroom Before and After"
-        style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+        style={{ width: '100%', height: 'auto', borderRadius: '6px', objectFit: 'cover' }}
       />
     </div>
   </div>
