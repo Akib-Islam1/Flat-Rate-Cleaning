@@ -87,10 +87,12 @@ export default function HomePage() {
 <section style={{ marginBottom: '3rem' }}>
   <h2 style={{ textAlign: 'center', fontSize: '1.8rem', marginBottom: '2rem' }}>Before & After</h2>
   <div style={{
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-    gap: '1rem',
-    justifyItems: 'center'
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    gap: '1.5rem',
+    maxWidth: '800px',
+    margin: '0 auto'
   }}>
     <div style={{ background: '#f5f5f5', padding: '1rem', borderRadius: '8px', width: '100%', maxWidth: '300px' }}>
       <img
