@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import kitchenImage from './assets/gallery/kitchen-before-after.png';
+import bathroomImage from './assets/gallery/bathroom-before-after.png';
+
 
 const loopedPhrases = [
   "Trusted cleaners.",
@@ -83,24 +86,21 @@ export default function HomePage() {
       {/* Gallery Section */}
 <section style={{ marginBottom: '3rem' }}>
   <h2 style={{ textAlign: 'center', fontSize: '1.8rem', marginBottom: '2rem' }}>Before & After</h2>
-  <div style={{
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-    gap: '1.5rem'
-  }}>
-    {[
-      { room: 'Kitchen', file: 'Kitchen Before & After.png' },
-      { room: 'Bathroom', file: 'Bathroom Before & After.png' }
-    ].map(({ room, file }) => (
-      <div key={room} style={{ borderRadius: '8px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(0,0,0,0.05)' }}>
-        <div style={{ fontWeight: 'bold', padding: '0.5rem', background: '#f0f0f0' }}>{room}</div>
-        <img
-          src={`/src/assets/gallery/${file}`}
-          alt={`${room} before and after`}
-          style={{ width: '100%', display: 'block' }}
-        />
-      </div>
-    ))}
+  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
+    <div style={{ backgroundColor: '#fff', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.05)', padding: '1rem' }}>
+      <img
+        src={kitchenImage}
+        alt="Kitchen Before and After"
+        style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+      />
+    </div>
+    <div style={{ backgroundColor: '#fff', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.05)', padding: '1rem' }}>
+      <img
+        src={bathroomImage}
+        alt="Bathroom Before and After"
+        style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+      />
+    </div>
   </div>
 </section>
 
