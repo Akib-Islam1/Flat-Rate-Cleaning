@@ -8,3 +8,4 @@ A responsive business website created to showcase cleaning services.
 
 **Tech Used:** HTML, CSS  
 **Outcome:** Built as an independent project to simulate a real-world business site for client engagement and data capture.
+![Flat-Rate Cleaning Website Screenshot](screenshot.png)
